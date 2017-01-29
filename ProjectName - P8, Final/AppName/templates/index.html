@@ -1,0 +1,9 @@
+{% for post in posts %}
+{{ post.text }} - {{ post.upload_time }}<br/>
+{% endfor %}
+
+<form method="POST" action="/App/post/">
+    <textarea name="text"></textarea>
+    {% csrf_token %}
+    <input type="submit" value="Post" />
+</form>
